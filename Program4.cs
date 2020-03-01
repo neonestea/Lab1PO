@@ -66,6 +66,23 @@ namespace Lab1
             this.value = Math.cos(this.value);
             return this.value;
         }
+        public double MakeTan()
+        {
+            line.exp = " tan( " + line.exp + " )";
+            this.value = Math.tan(this.value);
+            return this.value;
+        }
+        public double Factorial()
+        {
+            double val = 1;
+            line.exp = " ( " + line.exp + " )!";
+            for (int i = 0; i < this.value; i++)
+            {
+                val *= (double)i;
+            }
+            this.value = val;
+            return this.value;
+        }
 
         public void GetResult()
         {
@@ -104,6 +121,8 @@ namespace Lab1
             Console.WriteLine("^");
             Console.WriteLine("sin");
             Console.WriteLine("cos");
+            Console.WriteLine("tan");
+            Console.WriteLine("Factorial");
             Console.WriteLine("Sqrt");
             Console.WriteLine("Get");
             Console.WriteLine("Cancel");
@@ -170,6 +189,16 @@ namespace Lab1
                         break;
                     case "cos":
                         calc.MakeCos();
+                        Console.Write("Result: ");
+                        calc.GetResult();
+                        break;
+                    case "tan":
+                        calc.MakeTan();
+                        Console.Write("Result: ");
+                        calc.GetResult();
+                        break;
+                    case "Factorial":
+                        calc.Factorial();
                         Console.Write("Result: ");
                         calc.GetResult();
                         break;
